@@ -13,8 +13,8 @@ pyHeatMap
 
 
 import os
-import Image
-import ImageDraw2
+from PIL import Image
+from PIL import ImageDraw2
 from inc import cf
 
 class HeatMap(object):
@@ -40,8 +40,8 @@ class HeatMap(object):
 
         if not self.base and (self.width == 0 or self.height == 0):
             w, h = cf.getMaxSize(data)
-            self.width = self.width or w
-            self.height = self.height or h
+            self.width = self.width or w+1
+            self.height = self.height or h+1
 
 
     def __mkImg(self, base=None):
