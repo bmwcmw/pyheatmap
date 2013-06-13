@@ -82,7 +82,8 @@ class HeatMap(object):
         self.__mkImg(base)
 
         for hit in self.data:
-            x, y = hit[0], hit[1]
+            x = hit[0]
+            y = self.height - hit[1]
             if x < 0 or x >= self.width or y < 0 or y >= self.height:
                 continue
 
@@ -151,7 +152,8 @@ class HeatMap(object):
         heat_data = [0] * self.width * self.height
 
         for hit in self.data:
-            x, y = hit[0], hit[1]
+            x = hit[0]
+            y = self.height - hit[1]
             if x < 0 or x >= self.width or y < 0 or y >= self.height:
                 continue
 
